@@ -1,5 +1,5 @@
-import webpack from 'webpack'
-import path from 'path'
+var webpack = require('webpack')
+var path = require('path')
 
 let nodeModulesPath = path.resolve(__dirname, 'node_modules');
 let buildPath = path.resolve(__dirname, 'public', 'build');
@@ -8,14 +8,9 @@ let clientEntryPath = path.resolve(__dirname, 'src/client', 'app.js');
 module.exports = {
   devtool: 'eval',
   entry: [
+    'webpack-hot-middleware/client',
     // Application
-    clientEntryPath,
-
-    // For hot style updates
-    'webpack/hot/dev-server',
-
-    // The script refreshing the browser on none hot updates
-    'webpack-dev-server/client?http://localhost:8080'
+    clientEntryPath
   ],
   output: {
     // We need to give Webpack a path. It does not actually need it,
@@ -43,8 +38,12 @@ module.exports = {
 
   // We have to manually add the Hot Replacement plugin when running
   // from Node
-  plugin: [new webpack.HotModuleReplacementPlugin()],
-  devServer: {
-    hot: true
-  }
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    // Webpack 1.0
+    new webpack.optimize.OccurenceOrderPlugin(),
+    // Webpack 2.0 fixed this mispelling
+    // new webpack.optimize.OccurrenceOrderPlugin()
+    new webpack.NoErrorsPlugin()
+  ]
 }

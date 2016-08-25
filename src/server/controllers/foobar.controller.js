@@ -1,6 +1,6 @@
-import React from 'react'
-import ReactDOMServer from 'react-dom/server'
-import Foobar from '../../shared/components/Foobar.react'
+let React = require ('react')
+let ReactDOMServer = require('react-dom/server')
+let Foobar = require('../../shared/components/Foobar.react').default
 //let Foobar = React.createFactory(require('../../shared/components/Foobar.react'));
 
 exports.getFoo = function (req, res) {

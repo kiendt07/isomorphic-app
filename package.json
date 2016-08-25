@@ -25,7 +25,8 @@
     "eslint-plugin-jsx-a11y": "^2.1.0",
     "eslint-plugin-react": "^6.1.2",
     "webpack": "^1.13.2",
-    "webpack-dev-server": "^1.15.0"
+    "webpack-dev-server": "^1.15.0",
+    "webpack-hot-middleware": "^2.12.2"
   },
   "dependencies": {
     "express": "^4.14.0",

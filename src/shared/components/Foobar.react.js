@@ -6,7 +6,7 @@ export default React.createClass({
     return (
       <div>
         {this.props.test}
-        <Foobar2 testing='testingggg!!!'/>
+        <Foobar2 testing='testing!!!'/>
       </div>
     )
   }
