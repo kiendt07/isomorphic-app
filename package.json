@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "npm run transpile src/server/server.js",
-    "transpile": "babel-node --presets=es2015,react",
+    "transpile": "./node_modules/babel-cli/bin/babel-node.js --presets=es2015,react",
     "production": "NODE_ENV=production webpack -p --config webpack.production.config.js"
   },
   "author": "",
