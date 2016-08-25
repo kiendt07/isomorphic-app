@@ -6,12 +6,12 @@
   "scripts": {
     "start": "npm run transpile src/server/server.js",
     "transpile": "babel-node --presets=es2015,react",
-    "production": "NODE_ENV=production webpack -p --config webpack.production.config.js",
-    "postinstall": "node deploy"
+    "production": "NODE_ENV=production webpack -p --config webpack.production.config.js"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "babel": "^6.5.2",
     "babel-cli": "^6.11.4",
     "babel-core": "^6.13.2",
     "babel-eslint": "^6.1.2",
